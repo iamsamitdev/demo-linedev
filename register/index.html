@@ -83,7 +83,7 @@
     <script>
 
         async function getUserProfile(){
-            const profile = await liff.get
+            const profile = await liff.getProfile()
             // การอ่าน Profile แสดงผลในช่อง input 
             $("input#fullname").val(profile.displayName)
             $("input#email").val(liff.getDecodedIDToken().email)
