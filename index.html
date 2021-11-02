@@ -51,17 +51,23 @@
             }
             ])
             alert("Message sent")
-        }
+            }
         }
 
 
         async function main(){
+
+            liff.ready.then(() => {
+                // ตรวจสอบเงื่อนไขว่า login หรือยัง
+                if (liff.isLoggedIn()) {
+                    getUserProfile() // ดึงข้อมูล profile
+                    getContext()
+                }else{
+                    liff.login()
+                }
+            })
             await liff.init({ liffId: "1656588630-yVE1v7da" }) // intial liff id
-            // ตรวจสอบเงื่อนไขว่า login หรือยัง
-            if (liff.isLoggedIn()) {
-                getUserProfile() // ดึงข้อมูล profile
-                getContext()
-            }
+            
         }
 
         main()
