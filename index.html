@@ -43,7 +43,7 @@
         // ฟังก์ชันส่งข้อความเข้าไปในห้องแชต
         async function sendMsg() {
             alert("OKKKKK")
-            if (liff.getContext().type !== "none") {
+            if (liff.getContext().type == "utou") {
                 await liff.sendMessages([
                 {
                     "type": "sticker",
