@@ -97,7 +97,7 @@
             liff.init({ liffId: "1656588630-yVE1v7da" }) // intial liff id
 
             // การอ่าน Profile แสดงผลในช่อง input 
-            $("input#fullname").val(liff.getDecodedIDToken().displayName)
+            $("input#fullname").val(liff.getDecodedIDToken().name)
             $("input#email").val(liff.getDecodedIDToken().email)
             
         });
