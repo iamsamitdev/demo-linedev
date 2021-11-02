@@ -41,7 +41,7 @@
     <script>
 
         async function scanCode(){
-            const result = await liff.scanCodeV2()
+            const result = await liff.scanCode()
             var rowCount = $('table tbody tr').length;
             $("table tbody").append(
                 "<tr>"+
