@@ -43,16 +43,16 @@
         // ฟังก์ชันส่งข้อความเข้าไปในห้องแชต
         async function sendMsg() {
             alert("OKKKKK")
-            //if (liff.getContext().type == "utou") {
+            if (liff.getContext().type !== "none") {
                 await liff.sendMessages([
                 {
                     "type": "sticker",
-                    "stickerId": "1989",
-                    "packageId": "446"
+                    "stickerId": 1,
+                    "packageId": 1
                 }
                 ])
                 alert("Message sent")
-           // }
+            }
         }
 
 
