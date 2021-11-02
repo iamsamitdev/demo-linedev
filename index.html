@@ -42,15 +42,15 @@
 
         // ฟังก์ชันส่งข้อความเข้าไปในห้องแชต
         async function sendMsg() {
-        if (liff.getContext().type !== "none") {
-            await liff.sendMessages([
-            {
-                "type": "sticker",
-                "stickerId": 1,
-                "packageId": 1
-            }
-            ])
-            alert("Message sent")
+            if (liff.getContext().type !== "none") {
+                await liff.sendMessages([
+                {
+                    "type": "sticker",
+                    "stickerId": "446",
+                    "packageId": "1989"
+                }
+                ])
+                alert("Message sent")
             }
         }
 
