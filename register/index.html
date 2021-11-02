@@ -82,7 +82,14 @@
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
     <script>
 
-        $(function() {
+        async function getUserProfile(){
+            const profile = await liff.get
+            // การอ่าน Profile แสดงผลในช่อง input 
+            $("input#fullname").val(profile.displayName)
+            $("input#email").val(liff.getDecodedIDToken().email)
+        }
+
+        async function main(){
 
             liff.ready.then(() => {
                 // ตรวจสอบเงื่อนไขว่า login หรือยัง
@@ -93,15 +100,12 @@
                     liff.login()
                 }
             })
+            await liff.init({ liffId: "1656588630-yVE1v7da" }) // intial liff id
             
-            liff.init({ liffId: "1656588630-yVE1v7da" }) // intial liff id
+        }
 
-            // การอ่าน Profile แสดงผลในช่อง input 
-            // $("input#fullname").val(liff.getDecodedIDToken().name)
-            $("input#fullname").val("Samit Koyom")
-            $("input#email").val(liff.getDecodedIDToken().email)
-            
-        });
+        main()
+        
     </script>
 
 </body>
